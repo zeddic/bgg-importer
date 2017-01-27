@@ -1,0 +1,18 @@
+{
+  "name": "bgg-importer",
+  "description": "Import board game details from BoardGameGeek.com API",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./main"
+  },
+  "keywords": [
+    "boardgamegeek",
+    "bgg",
+    "import"
+  ],
+  "dependencies": {
+      "xml2js": "^0.4.17",
+      "promise-mysql": "3.0.0"
+  }
+}
