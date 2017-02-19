@@ -303,6 +303,36 @@ CREATE TABLE IF NOT EXISTS `bg_ranked_list_to_game` (
   KEY `rank` (`rank`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bg_game_attrs`
+--
+
+CREATE TABLE IF NOT EXISTS `bg_game_attrs` (
+  `game_id` int(11) NOT NULL,
+  `attr` varchar(32) NOT NULL,
+  UNIQUE KEY `game_id_2` (`game_id`,`attr`),
+  KEY `game_id` (`game_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bg_game_similar`
+--
+
+CREATE TABLE IF NOT EXISTS `bg_game_similar` (
+  `game_id` int(11) NOT NULL,
+  `target_game_id` int(11) NOT NULL,
+  `match` decimal(4,4) NOT NULL,
+  UNIQUE KEY `game_id_2` (`game_id`,`target_game_id`),
+  KEY `game_id` (`game_id`),
+  KEY `target_game_id` (`target_game_id`),
+  KEY `match` (`match`),
+  KEY `game_id_3` (`game_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Constraints for dumped tables
 --
